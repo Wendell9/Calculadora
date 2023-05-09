@@ -1,0 +1,17 @@
+Z:\Calculadora\Calculadora\bin\Debug\net6.0-windows\Calculadora.exe
+Z:\Calculadora\Calculadora\bin\Debug\net6.0-windows\Calculadora.deps.json
+Z:\Calculadora\Calculadora\bin\Debug\net6.0-windows\Calculadora.runtimeconfig.json
+Z:\Calculadora\Calculadora\bin\Debug\net6.0-windows\Calculadora.dll
+Z:\Calculadora\Calculadora\bin\Debug\net6.0-windows\Calculadora.pdb
+Z:\Calculadora\Calculadora\obj\Debug\net6.0-windows\Calculadora.csproj.AssemblyReference.cache
+Z:\Calculadora\Calculadora\obj\Debug\net6.0-windows\Calculadora.Form1.resources
+Z:\Calculadora\Calculadora\obj\Debug\net6.0-windows\Calculadora.csproj.GenerateResource.cache
+Z:\Calculadora\Calculadora\obj\Debug\net6.0-windows\Calculadora.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Calculadora\Calculadora\obj\Debug\net6.0-windows\Calculadora.AssemblyInfoInputs.cache
+Z:\Calculadora\Calculadora\obj\Debug\net6.0-windows\Calculadora.AssemblyInfo.cs
+Z:\Calculadora\Calculadora\obj\Debug\net6.0-windows\Calculadora.csproj.CoreCompileInputs.cache
+Z:\Calculadora\Calculadora\obj\Debug\net6.0-windows\Calculadora.dll
+Z:\Calculadora\Calculadora\obj\Debug\net6.0-windows\refint\Calculadora.dll
+Z:\Calculadora\Calculadora\obj\Debug\net6.0-windows\Calculadora.pdb
+Z:\Calculadora\Calculadora\obj\Debug\net6.0-windows\Calculadora.genruntimeconfig.cache
+Z:\Calculadora\Calculadora\obj\Debug\net6.0-windows\ref\Calculadora.dll
