@@ -16,58 +16,28 @@ namespace Calculadora
                 {
                     valor = Convert.ToSingle(((TextBox)controlador).Text);
                     soma += valor;
+                    cont++;
                 }
-                cont++;
             }
             media = soma / cont;
-            this.Controls["label6"].Text=media.ToString();
+            this.Controls["textBox5"].Text=media.ToString();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            double multiplica = 1, valor;
-            foreach (Control controlador in this.Controls)
-            {
-                if (controlador is TextBox && ((TextBox)controlador).Text != "")
-                {
-                    valor = Convert.ToSingle(((TextBox)controlador).Text);
-                    multiplica *= valor;
-                }
-            }
-            this.Controls["label6"].Text = multiplica.ToString();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            double soma = 0, valor;
-            foreach (Control controlador in this.Controls)
-            {
-                if (controlador is TextBox && ((TextBox)controlador).Text != "")
-                {
-                    valor = Convert.ToSingle(((TextBox)controlador).Text);
-                    soma += valor;
-                }
-            }
-            this.Controls["label6"].Text = soma.ToString();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            double resultado = 1, valor;
-            foreach (Control controlador in this.Controls)
-            {
-                if (controlador is TextBox && ((TextBox)controlador).Text != "")
-                {
-                    valor = Convert.ToSingle(((TextBox)controlador).Text);
-                    resultado=valor/resultado;
-                }
-            }
-            this.Controls["label6"].Text = resultado.ToString();
+            Form2 outroform = new Form2();
+            outroform.Visible = true;
+            this.Visible = false;
         }
     }
 }

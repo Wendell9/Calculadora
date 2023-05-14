@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\Calculadora\\Calculadora\\Calculadora.csproj": {}
+    "D:\\Downloads\\Calculadora\\Calculadora\\Calculadora\\Calculadora.csproj": {}
   },
   "projects": {
-    "Z:\\Calculadora\\Calculadora\\Calculadora.csproj": {
+    "D:\\Downloads\\Calculadora\\Calculadora\\Calculadora\\Calculadora.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Calculadora\\Calculadora\\Calculadora.csproj",
+        "projectUniqueName": "D:\\Downloads\\Calculadora\\Calculadora\\Calculadora\\Calculadora.csproj",
         "projectName": "Calculadora",
-        "projectPath": "Z:\\Calculadora\\Calculadora\\Calculadora.csproj",
-        "packagesPath": "C:\\Users\\082220017\\.nuget\\packages\\",
-        "outputPath": "Z:\\Calculadora\\Calculadora\\obj\\",
+        "projectPath": "D:\\Downloads\\Calculadora\\Calculadora\\Calculadora\\Calculadora.csproj",
+        "packagesPath": "C:\\Users\\PICHAU\\.nuget\\packages\\",
+        "outputPath": "D:\\Downloads\\Calculadora\\Calculadora\\Calculadora\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Program Files (x86)\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\082220017\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PICHAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
