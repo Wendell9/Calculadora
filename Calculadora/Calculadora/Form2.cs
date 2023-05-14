@@ -143,7 +143,17 @@ namespace Calculadora
                     operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
                     goto Inicio;
                 }
-                Console.WriteLine(resultado);
+                else if(operacao[0] != '-' && operacao.Contains('-'))
+                {
+                    posicao = operacao.IndexOf("-");
+                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    posicao1 = (int)a[1];
+                    b = Operacoes.coletanumerodepois(operacao, posicao);
+                    posicao2 = (int)b[1];
+                    resultado = Operacoes.subtracao(a[0], b[0]);
+                    operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
+                    goto Inicio;
+                }
             }
             else
             {
@@ -177,6 +187,17 @@ namespace Calculadora
                     b = Operacoes.coletanumerodepois(operacao, posicao);
                     posicao2 = (int)b[1];
                     resultado = Operacoes.soma(a[0], b[0]);
+                    operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
+                    goto Inicio;
+                }
+                else if (operacao[0]!='-' && operacao.Contains('-'))
+                {
+                    posicao = operacao.IndexOf("-");
+                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    posicao1 = (int)a[1];
+                    b = Operacoes.coletanumerodepois(operacao, posicao);
+                    posicao2 = (int)b[1];
+                    resultado = Operacoes.subtracao(a[0], b[0]);
                     operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
                     goto Inicio;
                 }

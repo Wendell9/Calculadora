@@ -16,12 +16,17 @@ namespace Calculadora
 
         public static double multiplicacao(double a, double b)
         {
-            return a*b ;
+            return a * b;
         }
 
         public static double divisao(double a, double b)
         {
             return a / b;
+        }
+
+        public static double subtracao(double a, double b)
+        {
+            return a - b;
         }
 
         public static double[] coletanumerosantes(string operacao, int posicao)
@@ -31,17 +36,22 @@ namespace Calculadora
             {
                 if ((operacao.Substring(posicao - i, 1) == "X" || operacao.Substring(posicao - i, 1) == "÷" || operacao.Substring(posicao - i, 1) == "-" || operacao.Substring(posicao - i, 1) == "+"))
                 {
+                    if (operacao.Substring(posicao - i, 1) == "-")
+                    {
+                        a[0] = Convert.ToDouble(operacao.Substring(posicao - i, i));
+                        a[1] = posicao - i;
+                    }
                     break;
                 }
                 else if (operacao.Substring(posicao - i, 1) == ".")
                 {
                     i++;
-                    a[0] = Convert.ToDouble(operacao.Substring(posicao - i, i), CultureInfo.InvariantCulture);
+                    a[0] = Convert.ToDouble(operacao.Substring(posicao - i, i));
                     a[1] = posicao - i;
                 }
                 else
                 {
-                    a[0] = Convert.ToDouble(operacao.Substring(posicao - i, i), CultureInfo.InvariantCulture);
+                    a[0] = Convert.ToDouble(operacao.Substring(posicao - i, i));
                     a[1] = posicao - i;
                 }
 
