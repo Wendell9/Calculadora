@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -103,7 +104,8 @@ namespace Calculadora
         {
            int posicao,posicao1,posicao2;
             double resultado = 0;
-            double a, b;
+            double[] a = new double[2];
+            double[] b = new double[2];
             string operacao = this.Controls["textBox1"].Text;
         Inicio:
             if (operacao.IndexOf('X') < operacao.IndexOf('÷'))
@@ -111,33 +113,33 @@ namespace Calculadora
                 if (operacao.Contains('X'))
                 {
                     posicao = operacao.IndexOf("X");
-                    a=Operacoes.coletanumerosantes(operacao, posicao)[0];
-                    posicao1 = (int)Operacoes.coletanumerosantes(operacao, posicao)[1];
-                    b =Operacoes.coletanumerodepois(operacao, posicao)[0];
-                    posicao2 = (int)Operacoes.coletanumerodepois(operacao, posicao)[1];
-                    resultado = Operacoes.multiplicacao(a, b);
+                    a=Operacoes.coletanumerosantes(operacao, posicao);
+                    posicao1 = (int)a[1];
+                    b =Operacoes.coletanumerodepois(operacao, posicao);
+                    posicao2 = (int)b[1];
+                    resultado = Operacoes.multiplicacao(a[0], b[0]);
                     operacao = operacao.Replace(operacao.Substring(posicao1, posicao2-posicao1), resultado.ToString());
                     goto Inicio;
                 }
                 else if (operacao.Contains('÷'))
                 {
                     posicao = operacao.IndexOf("÷");
-                    a = Operacoes.coletanumerosantes(operacao, posicao)[0];
-                    posicao1 = (int)Operacoes.coletanumerosantes(operacao, posicao)[1];
-                    b = Operacoes.coletanumerodepois(operacao, posicao)[0];
-                    posicao2 = (int)Operacoes.coletanumerodepois(operacao, posicao)[1];
-                    resultado = Operacoes.divisao(a, b);
+                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    posicao1 = (int)a[1];
+                    b = Operacoes.coletanumerodepois(operacao, posicao); ;
+                    posicao2 = (int)b[1];
+                    resultado = Operacoes.divisao(a[0], b[0]);
                     operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
                     goto Inicio;
                 }
                 else if (operacao.Contains('+'))
                 {
                     posicao = operacao.IndexOf("+");
-                    a = Operacoes.coletanumerosantes(operacao, posicao)[0];
-                    posicao1 = (int)Operacoes.coletanumerosantes(operacao, posicao)[1];
-                    b = Operacoes.coletanumerodepois(operacao, posicao)[0];
-                    posicao2 = (int)Operacoes.coletanumerodepois(operacao, posicao)[1];
-                    resultado = Operacoes.soma(a, b);
+                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    posicao1 = (int)a[1];
+                    b = Operacoes.coletanumerodepois(operacao, posicao);
+                    posicao2 = (int)b[1];
+                    resultado = Operacoes.soma(a[0], b[0]);
                     operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
                     goto Inicio;
                 }
@@ -148,38 +150,38 @@ namespace Calculadora
                 if (operacao.Contains('÷'))
                 {
                     posicao = operacao.IndexOf("÷");
-                    a = Operacoes.coletanumerosantes(operacao, posicao)[0];
-                    posicao1 = (int)Operacoes.coletanumerosantes(operacao, posicao)[1];
-                    b = Operacoes.coletanumerodepois(operacao, posicao)[0];
-                    posicao2 = (int)Operacoes.coletanumerodepois(operacao, posicao)[1];
-                    resultado = Operacoes.divisao(a, b);
+                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    posicao1 = (int)a[1];
+                    b = Operacoes.coletanumerodepois(operacao, posicao); ;
+                    posicao2 = (int)b[1];
+                    resultado = Operacoes.divisao(a[0], b[0]);
                     operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
                     goto Inicio;
                 }
                 else if (operacao.Contains('X'))
                 {
                     posicao = operacao.IndexOf("X");
-                    a = Operacoes.coletanumerosantes(operacao, posicao)[0];
-                    posicao1 = (int)Operacoes.coletanumerosantes(operacao, posicao)[1];
-                    b = Operacoes.coletanumerodepois(operacao, posicao)[0];
-                    posicao2 = (int)Operacoes.coletanumerodepois(operacao, posicao)[1];
-                    resultado = Operacoes.multiplicacao(a, b);
-                    operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
+                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    posicao1 = (int)a[1];
+                    b = Operacoes.coletanumerodepois(operacao, posicao);
+                    posicao2 = (int)b[1];
+                    resultado = Operacoes.multiplicacao(a[0], b[0]);
+                    operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString(CultureInfo.InvariantCulture));
                     goto Inicio;
                 }
                 else if (operacao.Contains('+'))
                 {
                     posicao = operacao.IndexOf("+");
-                    a = Operacoes.coletanumerosantes(operacao, posicao)[0];
-                    posicao1 = (int)Operacoes.coletanumerosantes(operacao, posicao)[1];
-                    b = Operacoes.coletanumerodepois(operacao, posicao)[0];
-                    posicao2 = (int)Operacoes.coletanumerodepois(operacao, posicao)[1];
-                    resultado = Operacoes.soma(a, b);
+                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    posicao1 = (int)a[1];
+                    b = Operacoes.coletanumerodepois(operacao, posicao);
+                    posicao2 = (int)b[1];
+                    resultado = Operacoes.soma(a[0], b[0]);
                     operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
                     goto Inicio;
                 }
             }
-            this.Controls["textBox1"].Text = resultado.ToString();
+            this.Controls["textBox1"].Text = resultado.ToString("0.################",CultureInfo.InvariantCulture);
         }
 
         private void button17_Click(object sender, EventArgs e)

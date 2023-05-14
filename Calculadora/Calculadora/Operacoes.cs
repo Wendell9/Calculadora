@@ -16,7 +16,7 @@ namespace Calculadora
 
         public static double multiplicacao(double a, double b)
         {
-            return (a * b);
+            return a*b ;
         }
 
         public static double divisao(double a, double b)
@@ -66,7 +66,7 @@ namespace Calculadora
                 }
                 else
                 {
-                    b[0] = Convert.ToDouble(operacao.Substring(posicao - i, i), CultureInfo.InvariantCulture);
+                    b[0] = Convert.ToDouble(operacao.Substring(posicao + 1, i), CultureInfo.InvariantCulture);
                     b[1] = posicao + i + 1;
                 }
             }
