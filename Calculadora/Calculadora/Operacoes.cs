@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace Calculadora
 
         public static double multiplicacao(double a, double b)
         {
-            return a * b;
+            return (a * b);
         }
 
         public static double divisao(double a, double b)
@@ -32,8 +33,18 @@ namespace Calculadora
                 {
                     break;
                 }
-                a[0] = double.Parse(operacao.Substring(posicao - i, i));
-                a[1] = posicao - i;
+                else if (operacao.Substring(posicao - i, 1) == ".")
+                {
+                    i++;
+                    a[0] = Convert.ToDouble(operacao.Substring(posicao - i, i), CultureInfo.InvariantCulture);
+                    a[1] = posicao - i;
+                }
+                else
+                {
+                    a[0] = Convert.ToDouble(operacao.Substring(posicao - i, i), CultureInfo.InvariantCulture);
+                    a[1] = posicao - i;
+                }
+
             }
             return a;
         }
@@ -47,8 +58,17 @@ namespace Calculadora
                 {
                     break;
                 }
-                b[0] = double.Parse(operacao.Substring(posicao + 1, i));
-                b[1] = posicao + i + 1;
+                else if (operacao.Substring(posicao + i, 1) == ".")
+                {
+                    i++;
+                    b[0] = Convert.ToDouble(operacao.Substring(posicao + 1, i), CultureInfo.InvariantCulture);
+                    b[1] = posicao + i + 1;
+                }
+                else
+                {
+                    b[0] = Convert.ToDouble(operacao.Substring(posicao - i, i), CultureInfo.InvariantCulture);
+                    b[1] = posicao + i + 1;
+                }
             }
             return b;
         }
