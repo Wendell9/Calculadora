@@ -30,7 +30,7 @@ namespace Calculadora
             {
                 return a + b;
             }
-            return a - Math.Abs(b);
+            return a - (-1*b);
         }
 
         public static double[] coletanumerosantes(string operacao, int posicao, char simbolo)
