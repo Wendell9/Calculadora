@@ -102,7 +102,7 @@ namespace Calculadora
 
         private void button16_Click(object sender, EventArgs e)
         {
-           int posicao,posicao1,posicao2;
+            int posicao, posicao1, posicao2;
             double resultado = 0;
             double[] a = new double[2];
             double[] b = new double[2];
@@ -113,18 +113,18 @@ namespace Calculadora
                 if (operacao.Contains('X'))
                 {
                     posicao = operacao.IndexOf("X");
-                    a=Operacoes.coletanumerosantes(operacao, posicao);
+                    a = Operacoes.coletanumerosantes(operacao, posicao,'X');
                     posicao1 = (int)a[1];
-                    b =Operacoes.coletanumerodepois(operacao, posicao);
+                    b = Operacoes.coletanumerodepois(operacao, posicao);
                     posicao2 = (int)b[1];
                     resultado = Operacoes.multiplicacao(a[0], b[0]);
-                    operacao = operacao.Replace(operacao.Substring(posicao1, posicao2-posicao1), resultado.ToString());
+                    operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
                     goto Inicio;
                 }
                 else if (operacao.Contains('÷'))
                 {
                     posicao = operacao.IndexOf("÷");
-                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    a = Operacoes.coletanumerosantes(operacao, posicao, '÷');
                     posicao1 = (int)a[1];
                     b = Operacoes.coletanumerodepois(operacao, posicao); ;
                     posicao2 = (int)b[1];
@@ -135,7 +135,7 @@ namespace Calculadora
                 else if (operacao.Contains('+'))
                 {
                     posicao = operacao.IndexOf("+");
-                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    a = Operacoes.coletanumerosantes(operacao, posicao,'+');
                     posicao1 = (int)a[1];
                     b = Operacoes.coletanumerodepois(operacao, posicao);
                     posicao2 = (int)b[1];
@@ -143,10 +143,10 @@ namespace Calculadora
                     operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
                     goto Inicio;
                 }
-                else if(operacao[0] != '-' && operacao.Contains('-'))
+                else if (operacao[0] != '-' && operacao.Contains('-'))
                 {
                     posicao = operacao.IndexOf("-");
-                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    a = Operacoes.coletanumerosantes(operacao, posicao,'-');
                     posicao1 = (int)a[1];
                     b = Operacoes.coletanumerodepois(operacao, posicao);
                     posicao2 = (int)b[1];
@@ -160,9 +160,9 @@ namespace Calculadora
                 if (operacao.Contains('÷'))
                 {
                     posicao = operacao.IndexOf("÷");
-                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    a = Operacoes.coletanumerosantes(operacao, posicao, '÷');
                     posicao1 = (int)a[1];
-                    b = Operacoes.coletanumerodepois(operacao, posicao); ;
+                    b = Operacoes.coletanumerodepois(operacao, posicao); 
                     posicao2 = (int)b[1];
                     resultado = Operacoes.divisao(a[0], b[0]);
                     operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
@@ -171,7 +171,7 @@ namespace Calculadora
                 else if (operacao.Contains('X'))
                 {
                     posicao = operacao.IndexOf("X");
-                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    a = Operacoes.coletanumerosantes(operacao, posicao,'X');
                     posicao1 = (int)a[1];
                     b = Operacoes.coletanumerodepois(operacao, posicao);
                     posicao2 = (int)b[1];
@@ -179,10 +179,10 @@ namespace Calculadora
                     operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString(CultureInfo.InvariantCulture));
                     goto Inicio;
                 }
-                else if (operacao.Contains('+'))
+                else if (operacao.Substring(1).Contains('+'))
                 {
                     posicao = operacao.IndexOf("+");
-                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    a = Operacoes.coletanumerosantes(operacao, posicao,'+');
                     posicao1 = (int)a[1];
                     b = Operacoes.coletanumerodepois(operacao, posicao);
                     posicao2 = (int)b[1];
@@ -190,10 +190,14 @@ namespace Calculadora
                     operacao = operacao.Replace(operacao.Substring(posicao1, posicao2 - posicao1), resultado.ToString());
                     goto Inicio;
                 }
-                else if (operacao[0]!='-' && operacao.Contains('-'))
+                else if (operacao.Contains('-'))
                 {
+                    if (operacao.IndexOf("-", 1) == -1)
+                    {
+                        goto Fim;
+                    }
                     posicao = operacao.IndexOf("-");
-                    a = Operacoes.coletanumerosantes(operacao, posicao);
+                    a = Operacoes.coletanumerosantes(operacao, posicao,'-');
                     posicao1 = (int)a[1];
                     b = Operacoes.coletanumerodepois(operacao, posicao);
                     posicao2 = (int)b[1];
@@ -202,7 +206,8 @@ namespace Calculadora
                     goto Inicio;
                 }
             }
-            this.Controls["textBox1"].Text = resultado.ToString("0.################",CultureInfo.InvariantCulture);
+        Fim:
+            this.Controls["textBox1"].Text = resultado.ToString("0.################", CultureInfo.InvariantCulture);
         }
 
         private void button17_Click(object sender, EventArgs e)
